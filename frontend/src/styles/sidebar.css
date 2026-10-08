@@ -141,9 +141,9 @@
    ========================================= */
 
 .sidebar-nav {
-  flex: 1;
+  flex: 0 1 auto;
 
-  padding: 22px 14px;
+  padding: 22px 14px 0;
 
   overflow-y: auto;
 
