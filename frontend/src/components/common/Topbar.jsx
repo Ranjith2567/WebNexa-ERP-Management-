@@ -25,8 +25,7 @@ import { useTheme } from "../../context/ThemeContext";
 
 import "../../styles/topbar.css";
 
-
-function Topbar() {
+function Topbar({ onMenuClick }) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -74,7 +73,6 @@ function Topbar() {
   const userRole =
     storedUser?.role ||
     "SUPER ADMIN";
-
 
   /* =========================
       PAGE INFORMATION
@@ -338,7 +336,6 @@ function Topbar() {
     );
   }, [location.pathname]);
 
-
   /* =========================
       CLOSE PROFILE ON ROUTE
   ========================= */
@@ -346,7 +343,6 @@ function Topbar() {
   useEffect(() => {
     setProfileOpen(false);
   }, [location.pathname]);
-
 
   /* =========================
       LOGOUT
@@ -368,7 +364,6 @@ function Topbar() {
     });
   };
 
-
   /* =========================
       PROFILE
   ========================= */
@@ -378,7 +373,6 @@ function Topbar() {
     navigate("/settings");
   };
 
-
   /* =========================
       NOTIFICATIONS
   ========================= */
@@ -386,7 +380,6 @@ function Topbar() {
   const handleNotifications = () => {
     navigate("/notifications");
   };
-
 
   /* =========================
       GLOBAL SEARCH RESULT
@@ -550,7 +543,6 @@ function Topbar() {
     }
   };
 
-
   return (
     <header className="topbar">
 
@@ -564,6 +556,7 @@ function Topbar() {
           className="topbar-menu-btn"
           type="button"
           title="Menu"
+          onClick={onMenuClick}
         >
           <FiMenu />
         </button>
@@ -575,16 +568,13 @@ function Topbar() {
 
       </div>
 
-
       {/* =========================
           RIGHT
       ========================= */}
 
       <div className="topbar-right">
 
-        {/* =========================
-            GLOBAL SEARCH
-        ========================= */}
+        {/* GLOBAL SEARCH */}
 
         <div className="topbar-search-wrapper">
           <GlobalSearch
@@ -592,10 +582,7 @@ function Topbar() {
           />
         </div>
 
-
-        {/* =========================
-            THEME
-        ========================= */}
+        {/* THEME */}
 
         <button
           type="button"
@@ -614,10 +601,7 @@ function Topbar() {
           )}
         </button>
 
-
-        {/* =========================
-            NOTIFICATIONS
-        ========================= */}
+        {/* NOTIFICATIONS */}
 
         <button
           type="button"
@@ -632,10 +616,7 @@ function Topbar() {
           </span>
         </button>
 
-
-        {/* =========================
-            PROFILE
-        ========================= */}
+        {/* PROFILE */}
 
         <div className="topbar-profile-wrapper">
 
@@ -667,10 +648,7 @@ function Topbar() {
 
           </button>
 
-
-          {/* =========================
-              PROFILE DROPDOWN
-          ========================= */}
+          {/* PROFILE DROPDOWN */}
 
           {profileOpen && (
             <div className="profile-dropdown">
@@ -688,11 +666,7 @@ function Topbar() {
 
               </div>
 
-
               <div className="dropdown-divider" />
-
-
-              {/* PROFILE */}
 
               <button
                 type="button"
@@ -702,9 +676,6 @@ function Topbar() {
                 <FiUser />
                 <span>My Profile</span>
               </button>
-
-
-              {/* SETTINGS */}
 
               <button
                 type="button"
@@ -717,9 +688,6 @@ function Topbar() {
                 <FiSettings />
                 <span>Settings</span>
               </button>
-
-
-              {/* LOGOUT */}
 
               <button
                 type="button"

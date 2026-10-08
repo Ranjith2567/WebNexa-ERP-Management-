@@ -36,7 +36,7 @@ import {
 
 import "../../styles/sidebar.css";
 
-function Sidebar() {
+function Sidebar({ mobileOpen, onMobileClose }) {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -343,6 +343,10 @@ function Sidebar() {
         setInventoryOpen(false);
         setPurchasesOpen(false);
         setFinanceOpen(false);
+
+        if (onMobileClose) {
+            onMobileClose();
+        }
     };
 
     /* =========================
@@ -394,10 +398,6 @@ function Sidebar() {
     ========================= */
 
     const handleLogout = () => {
-        /*
-         * Clear authentication/session data.
-         * Keep this limited to ERP authentication-related keys.
-         */
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         localStorage.removeItem("companyId");
@@ -410,7 +410,11 @@ function Sidebar() {
     };
 
     return (
-        <aside className="sidebar">
+        <aside
+            className={`sidebar ${
+                mobileOpen ? "mobile-open" : ""
+            }`}
+        >
 
             {/* =========================
                 LOGO
@@ -429,7 +433,6 @@ function Sidebar() {
 
             </div>
 
-
             {/* =========================
                 NAVIGATION
             ========================= */}
@@ -440,10 +443,7 @@ function Sidebar() {
                     MAIN MENU
                 </p>
 
-
-                {/* =========================
-                    MAIN MENU ITEMS
-                ========================= */}
+                {/* MAIN MENU ITEMS */}
 
                 {menuItems.map((item) => (
                     <NavLink
@@ -456,7 +456,6 @@ function Sidebar() {
                             }`
                         }
                     >
-
                         <span className="sidebar-icon">
                             {item.icon}
                         </span>
@@ -464,10 +463,8 @@ function Sidebar() {
                         <span className="sidebar-link-text">
                             {item.name}
                         </span>
-
                     </NavLink>
                 ))}
-
 
                 {/* =========================
                     INVENTORY DROPDOWN
@@ -482,7 +479,6 @@ function Sidebar() {
                     }`}
                     onClick={handleInventoryToggle}
                 >
-
                     <span className="sidebar-icon">
                         <FiPackage />
                     </span>
@@ -498,13 +494,7 @@ function Sidebar() {
                     >
                         <FiChevronDown />
                     </span>
-
                 </button>
-
-
-                {/* =========================
-                    INVENTORY SUBMENU
-                ========================= */}
 
                 <div
                     className={`sidebar-submenu ${
@@ -513,18 +503,17 @@ function Sidebar() {
                             : ""
                     }`}
                 >
-
                     {inventoryItems.map((item) => (
                         <NavLink
                             key={item.path}
                             to={item.path}
+                            onClick={onMobileClose}
                             className={({ isActive }) =>
                                 `sidebar-submenu-link ${
                                     isActive ? "active" : ""
                                 }`
                             }
                         >
-
                             <span className="sidebar-submenu-icon">
                                 {item.icon}
                             </span>
@@ -532,12 +521,9 @@ function Sidebar() {
                             <span className="sidebar-submenu-text">
                                 {item.name}
                             </span>
-
                         </NavLink>
                     ))}
-
                 </div>
-
 
                 {/* =========================
                     SALES DROPDOWN
@@ -552,7 +538,6 @@ function Sidebar() {
                     }`}
                     onClick={handleSalesToggle}
                 >
-
                     <span className="sidebar-icon">
                         <FiDollarSign />
                     </span>
@@ -568,13 +553,7 @@ function Sidebar() {
                     >
                         <FiChevronDown />
                     </span>
-
                 </button>
-
-
-                {/* =========================
-                    SALES SUBMENU
-                ========================= */}
 
                 <div
                     className={`sidebar-submenu ${
@@ -583,18 +562,17 @@ function Sidebar() {
                             : ""
                     }`}
                 >
-
                     {salesItems.map((item) => (
                         <NavLink
                             key={item.path}
                             to={item.path}
+                            onClick={onMobileClose}
                             className={({ isActive }) =>
                                 `sidebar-submenu-link ${
                                     isActive ? "active" : ""
                                 }`
                             }
                         >
-
                             <span className="sidebar-submenu-icon">
                                 {item.icon}
                             </span>
@@ -602,12 +580,9 @@ function Sidebar() {
                             <span className="sidebar-submenu-text">
                                 {item.name}
                             </span>
-
                         </NavLink>
                     ))}
-
                 </div>
-
 
                 {/* =========================
                     PURCHASES DROPDOWN
@@ -622,7 +597,6 @@ function Sidebar() {
                     }`}
                     onClick={handlePurchasesToggle}
                 >
-
                     <span className="sidebar-icon">
                         <FiShoppingCart />
                     </span>
@@ -638,13 +612,7 @@ function Sidebar() {
                     >
                         <FiChevronDown />
                     </span>
-
                 </button>
-
-
-                {/* =========================
-                    PURCHASES SUBMENU
-                ========================= */}
 
                 <div
                     className={`sidebar-submenu ${
@@ -653,18 +621,17 @@ function Sidebar() {
                             : ""
                     }`}
                 >
-
                     {purchaseItems.map((item) => (
                         <NavLink
                             key={item.path}
                             to={item.path}
+                            onClick={onMobileClose}
                             className={({ isActive }) =>
                                 `sidebar-submenu-link ${
                                     isActive ? "active" : ""
                                 }`
                             }
                         >
-
                             <span className="sidebar-submenu-icon">
                                 {item.icon}
                             </span>
@@ -672,12 +639,9 @@ function Sidebar() {
                             <span className="sidebar-submenu-text">
                                 {item.name}
                             </span>
-
                         </NavLink>
                     ))}
-
                 </div>
-
 
                 {/* =========================
                     FINANCE DROPDOWN
@@ -692,7 +656,6 @@ function Sidebar() {
                     }`}
                     onClick={handleFinanceToggle}
                 >
-
                     <span className="sidebar-icon">
                         <FiCreditCard />
                     </span>
@@ -708,13 +671,7 @@ function Sidebar() {
                     >
                         <FiChevronDown />
                     </span>
-
                 </button>
-
-
-                {/* =========================
-                    FINANCE SUBMENU
-                ========================= */}
 
                 <div
                     className={`sidebar-submenu ${
@@ -723,18 +680,17 @@ function Sidebar() {
                             : ""
                     }`}
                 >
-
                     {financeItems.map((item) => (
                         <NavLink
                             key={item.path}
                             to={item.path}
+                            onClick={onMobileClose}
                             className={({ isActive }) =>
                                 `sidebar-submenu-link ${
                                     isActive ? "active" : ""
                                 }`
                             }
                         >
-
                             <span className="sidebar-submenu-icon">
                                 {item.icon}
                             </span>
@@ -742,12 +698,9 @@ function Sidebar() {
                             <span className="sidebar-submenu-text">
                                 {item.name}
                             </span>
-
                         </NavLink>
                     ))}
-
                 </div>
-
 
                 {/* =========================
                     REMAINING MENU
@@ -764,7 +717,6 @@ function Sidebar() {
                             }`
                         }
                     >
-
                         <span className="sidebar-icon">
                             {item.icon}
                         </span>
@@ -772,12 +724,10 @@ function Sidebar() {
                         <span className="sidebar-link-text">
                             {item.name}
                         </span>
-
                     </NavLink>
                 ))}
 
             </nav>
-
 
             {/* =========================
                 LOGOUT
@@ -790,7 +740,6 @@ function Sidebar() {
                     type="button"
                     onClick={handleLogout}
                 >
-
                     <span className="sidebar-icon">
                         <FiLogOut />
                     </span>
@@ -798,7 +747,6 @@ function Sidebar() {
                     <span className="sidebar-link-text">
                         Logout
                     </span>
-
                 </button>
 
             </div>
