@@ -1,0 +1,185 @@
+/* =========================================
+   WEBNEXA ERP - THEME SYSTEM
+========================================= */
+
+:root {
+
+    /* =====================================
+       DARK THEME
+    ===================================== */
+
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --bg-tertiary: #111c30;
+
+    --card-bg: #0f172a;
+    --card-bg-hover: #172033;
+
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --border-color: #1e293b;
+    --border-light: #263449;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: rgba(37, 99, 235, 0.18);
+
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --info: #0284c7;
+
+    --input-bg: #111c30;
+    --input-border: #263449;
+
+    --table-header: #111c30;
+    --table-row-hover: #172033;
+
+    --shadow-color: rgba(0, 0, 0, 0.35);
+
+    --scrollbar-track: transparent;
+    --scrollbar-thumb: #334155;
+}
+
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+html.light-theme {
+
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+
+    --card-bg: #ffffff;
+    --card-bg-hover: #f8fafc;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    --border-color: #e2e8f0;
+    --border-light: #cbd5e1;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --info: #0284c7;
+
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+
+    --table-header: #f8fafc;
+    --table-row-hover: #f1f5f9;
+
+    --shadow-color: rgba(15, 23, 42, 0.08);
+
+    --scrollbar-track: #f1f5f9;
+    --scrollbar-thumb: #cbd5e1;
+}
+
+
+/* =========================================
+   GLOBAL BODY
+========================================= */
+
+html,
+body,
+#root {
+
+    margin: 0;
+    min-height: 100%;
+
+    background: var(--bg-primary);
+
+    color: var(--text-primary);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* =========================================
+   GLOBAL ELEMENTS
+========================================= */
+
+body {
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg-primary);
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+
+    background: rgba(37, 99, 235, 0.2);
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--scrollbar-thumb);
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+}
+
+
+/* =========================================
+   SMOOTH THEME TRANSITION
+========================================= */
+
+body,
+button,
+input,
+textarea,
+select,
+table,
+.card {
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}

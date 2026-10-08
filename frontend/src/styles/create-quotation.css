@@ -1,0 +1,762 @@
+/* =========================================
+   CREATE QUOTATION PAGE
+========================================= */
+
+.create-quotation-page {
+  min-height: 100%;
+  padding: 32px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.quotation-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.quotation-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.quotation-title-row > svg {
+  width: 30px;
+  height: 30px;
+  margin-top: 3px;
+  color: var(--primary);
+}
+
+.quotation-title-row h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.quotation-title-row p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.quotation-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 16px;
+
+  border-radius: 9px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+
+  color: var(--text-secondary);
+
+  text-decoration: none;
+  font-size: 14px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.quotation-back-btn:hover {
+  border-color: rgba(37, 99, 235, 0.5);
+  background: var(--card-bg-hover);
+  color: var(--text-primary);
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.quotation-error {
+  padding: 14px 18px;
+  margin-bottom: 22px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(239, 68, 68, 0.35);
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: var(--danger);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.quotation-card {
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 14px;
+
+  padding: 24px;
+
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 10px 30px var(--shadow-color);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.quotation-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.quotation-card-header h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.quotation-card-header p {
+  margin: 5px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   FORM GRID
+========================= */
+
+.quotation-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.quotation-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quotation-field label {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.quotation-field label span {
+  color: var(--danger);
+}
+
+.quotation-field input,
+.quotation-field select,
+.quotation-card textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--input-border);
+
+  outline: none;
+
+  background: var(--input-bg);
+  color: var(--text-primary);
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.quotation-field input::placeholder,
+.quotation-card textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.quotation-field input:focus,
+.quotation-field select:focus,
+.quotation-card textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.quotation-field select option {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.quotation-field input:disabled,
+.quotation-field select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   ITEMS HEADER
+========================= */
+
+.quotation-items-header {
+  margin-bottom: 18px;
+}
+
+.quotation-add-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 15px;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quotation-add-item-btn:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================
+   ITEM
+========================= */
+
+.quotation-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quotation-item {
+  position: relative;
+
+  display: flex;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  background: var(--bg-tertiary);
+
+  border: 1px solid var(--border-color);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.quotation-item-number {
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quotation-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.quotation-item-grid {
+  display: grid;
+
+  grid-template-columns:
+    2fr 2fr 1fr 1.2fr 1fr 1fr;
+
+  gap: 14px;
+}
+
+.quotation-product-field {
+  min-width: 0;
+}
+
+.quotation-remove-item {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(239, 68, 68, 0.15);
+
+  border-radius: 7px;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: var(--danger);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.quotation-remove-item:hover {
+  background: rgba(239, 68, 68, 0.14);
+
+  border-color: rgba(239, 68, 68, 0.35);
+
+  color: var(--danger);
+}
+
+.quotation-remove-item:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   ITEM SUMMARY
+========================= */
+
+.quotation-item-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid var(--border-color);
+}
+
+.quotation-item-summary > div {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.quotation-item-summary span {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.quotation-item-summary strong {
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+.quotation-item-summary .item-total strong {
+  color: var(--primary);
+}
+
+
+/* =========================
+   NOTES / TERMS
+========================= */
+
+.quotation-bottom-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 22px;
+}
+
+.quotation-card textarea {
+  resize: vertical;
+
+  min-height: 120px;
+
+  font-family: inherit;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   TOTALS
+========================= */
+
+.quotation-totals-card {
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.quotation-totals {
+  width: 420px;
+  max-width: 100%;
+}
+
+.quotation-total-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 9px 0;
+}
+
+.quotation-total-row span {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.quotation-total-row strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+.quotation-total-row .discount-value {
+  color: var(--danger);
+}
+
+.quotation-total-divider {
+  height: 1px;
+
+  margin: 10px 0;
+
+  background: var(--border-color);
+}
+
+.quotation-grand-total {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 8px;
+}
+
+.quotation-grand-total span {
+  color: var(--text-primary);
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.quotation-grand-total strong {
+  color: var(--primary);
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.quotation-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 30px;
+}
+
+.quotation-cancel-btn,
+.quotation-save-btn {
+  min-width: 130px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quotation-cancel-btn {
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-light);
+
+  color: var(--text-secondary);
+}
+
+.quotation-cancel-btn:hover {
+  border-color: var(--border-light);
+
+  background: var(--card-bg-hover);
+
+  color: var(--text-primary);
+}
+
+.quotation-save-btn {
+  border: 1px solid var(--primary);
+
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+.quotation-save-btn:hover {
+  background: var(--primary-hover);
+
+  border-color: var(--primary-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.quotation-save-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+.create-quotation-loader {
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  color: var(--text-secondary);
+}
+
+.quotation-spinner {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  border: 3px solid var(--border-color);
+
+  border-top-color: var(--primary);
+
+  animation:
+    quotationSpin 0.8s linear infinite;
+}
+
+@keyframes quotationSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .quotation-item-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .create-quotation-page {
+    padding: 22px;
+  }
+
+  .quotation-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quotation-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quotation-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quotation-item-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .create-quotation-page {
+    padding: 16px;
+  }
+
+  .quotation-title-row h1 {
+    font-size: 23px;
+  }
+
+  .quotation-card {
+    padding: 18px;
+  }
+
+  .quotation-item {
+    padding: 16px;
+    padding-top: 58px;
+  }
+
+  .quotation-item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quotation-item-summary {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .quotation-items-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .quotation-form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .quotation-cancel-btn,
+  .quotation-save-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .quotation-item-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .quotation-grand-total strong {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .create-quotation-page,
+  .quotation-card,
+  .quotation-item,
+  .quotation-save-btn,
+  .quotation-add-item-btn,
+  .quotation-spinner {
+    animation: none;
+    transition: none;
+  }
+}

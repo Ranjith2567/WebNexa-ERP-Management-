@@ -1,0 +1,385 @@
+/* =====================================================
+   SALES ORDERS PAGE
+   WebNexa ERP - Dark + Light Professional Theme
+===================================================== */
+
+.sales-orders-page {
+    width: 100%;
+    padding: 28px;
+    box-sizing: border-box;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.sales-orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.sales-orders-header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sales-orders-header p {
+    margin: 6px 0 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.sales-orders-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.sales-orders-create-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 17px;
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.sales-orders-create-btn:hover {
+    background: var(--primary-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.sales-orders-refresh-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sales-orders-refresh-btn:hover {
+    background: var(--card-bg-hover);
+    color: var(--text-primary);
+    border-color: var(--border-light);
+}
+
+.sales-orders-refresh-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.sales-orders-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.sales-orders-search {
+    width: 340px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--input-bg);
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.25s ease;
+}
+
+.sales-orders-search:focus-within {
+    border-color: var(--primary);
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.sales-orders-search svg {
+    color: var(--text-secondary);
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.sales-orders-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.sales-orders-search input::placeholder {
+    color: var(--text-muted);
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.sales-orders-error {
+    margin-bottom: 18px;
+    padding: 13px 15px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--danger);
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.sales-orders-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--card-bg);
+}
+
+.sales-orders-table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.sales-orders-table thead {
+    background: var(--table-header);
+}
+
+.sales-orders-table th {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    background: var(--table-header);
+}
+
+.sales-orders-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.sales-orders-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.sales-orders-table tbody tr:hover {
+    background: var(--table-row-hover);
+}
+
+.sales-orders-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.sales-orders-table td strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.sales-orders-empty {
+    height: 180px;
+    text-align: center !important;
+    color: var(--text-secondary) !important;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.sales-orders-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.status-draft {
+    background: rgba(100, 116, 139, 0.15);
+    color: var(--text-secondary);
+}
+
+.status-confirmed {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--primary);
+}
+
+.status-processing {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--warning);
+}
+
+.status-ready {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+}
+
+.status-completed {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--success);
+}
+
+.status-cancelled {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.sales-orders-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.sales-orders-action-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--input-bg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sales-orders-action-btn svg {
+    font-size: 14px;
+}
+
+.sales-orders-action-btn.view {
+    color: var(--primary);
+}
+
+.sales-orders-action-btn.view:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: var(--primary);
+}
+
+.sales-orders-action-btn.edit {
+    color: var(--warning);
+}
+
+.sales-orders-action-btn.edit:hover {
+    background: rgba(245, 158, 11, 0.12);
+    border-color: var(--warning);
+}
+
+.sales-orders-action-btn.delete {
+    color: var(--danger);
+}
+
+.sales-orders-action-btn.delete:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: var(--danger);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+    .sales-orders-page {
+        padding: 20px;
+    }
+
+    .sales-orders-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sales-orders-header-actions {
+        width: 100%;
+    }
+
+    .sales-orders-create-btn {
+        flex: 1;
+    }
+
+    .sales-orders-search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .sales-orders-page {
+        padding: 15px;
+    }
+
+    .sales-orders-header h1 {
+        font-size: 22px;
+    }
+
+    .sales-orders-create-btn {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .sales-orders-refresh-btn {
+        width: 38px;
+        height: 38px;
+    }
+}

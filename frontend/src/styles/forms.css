@@ -1,0 +1,361 @@
+/* =========================================
+   COMMON FORM STYLES
+========================================= */
+
+.common-form-group {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.common-form-label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.common-form-required {
+    margin-left: 3px;
+    color: var(--danger);
+}
+
+.common-form-input,
+.common-form-select,
+.common-form-textarea {
+    width: 100%;
+
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+
+    background: var(--input-bg);
+    color: var(--text-primary);
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.common-form-input,
+.common-form-select {
+    height: 42px;
+    padding: 0 12px;
+}
+
+.common-form-textarea {
+    min-height: 100px;
+    padding: 11px 12px;
+    resize: vertical;
+}
+
+.common-form-input::placeholder,
+.common-form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.common-form-input:hover,
+.common-form-select:hover,
+.common-form-textarea:hover {
+    border-color: var(--border-light);
+}
+
+.common-form-input:focus,
+.common-form-select:focus,
+.common-form-textarea:focus {
+    border-color: rgba(37, 99, 235, 0.7);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+
+    background: var(--input-bg);
+}
+
+.common-form-input:disabled,
+.common-form-select:disabled,
+.common-form-textarea:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   SELECT
+========================================= */
+
+.common-form-select {
+    cursor: pointer;
+}
+
+.common-form-select option {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.common-form-error {
+    margin-top: 5px;
+
+    color: #f87171;
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   HELP TEXT
+========================================= */
+
+.common-form-help {
+    margin-top: 5px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   FILE UPLOAD
+========================================= */
+
+.common-file-upload {
+    width: 100%;
+}
+
+.common-file-upload-area {
+    position: relative;
+
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    border: 1px dashed var(--border-light);
+    border-radius: 10px;
+
+    background: var(--bg-tertiary);
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.common-file-upload-area:hover {
+    border-color: rgba(37, 99, 235, 0.6);
+    background: var(--primary-light);
+}
+
+.common-file-upload-icon {
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 8px;
+
+    color: #60a5fa;
+}
+
+.common-file-upload-text {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.common-file-upload-hint {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    text-align: center;
+}
+
+.common-file-upload-input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================================
+   FILE SELECTED
+========================================= */
+
+.common-file-selected {
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 9px 11px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    background: var(--card-bg);
+}
+
+.common-file-selected-name {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.common-file-selected-remove {
+    width: 26px;
+    height: 26px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+    color: var(--text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.common-file-selected-remove:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.common-form-checkbox {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.common-form-checkbox input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: var(--primary);
+
+    cursor: pointer;
+}
+
+.common-form-checkbox-label {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.common-form-row {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.common-form-row.three-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* =========================================
+   FORM SECTION
+========================================= */
+
+.common-form-section {
+    margin-bottom: 22px;
+}
+
+.common-form-section:last-child {
+    margin-bottom: 0;
+}
+
+.common-form-section-title {
+    margin: 0 0 14px;
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.common-form-section-description {
+    margin: -8px 0 14px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    .common-form-row,
+    .common-form-row.three-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .common-form-input,
+    .common-form-select {
+        height: 40px;
+    }
+
+    .common-form-textarea {
+        min-height: 90px;
+    }
+
+    .common-file-upload-area {
+        min-height: 105px;
+        padding: 16px;
+    }
+}

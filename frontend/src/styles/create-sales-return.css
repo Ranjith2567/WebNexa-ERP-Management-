@@ -1,0 +1,714 @@
+/* =========================================================
+   CREATE SALES RETURN
+   WebNexa ERP - Professional Light / Dark Theme
+   ========================================================= */
+
+.create-sales-return-page {
+  min-height: 100%;
+  padding: 24px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.create-sales-return-header {
+  margin-bottom: 22px;
+}
+
+.create-sales-return-header-left {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.create-sales-return-back {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.create-sales-return-back:hover {
+  color: var(--text-primary);
+  background: var(--card-bg-hover);
+  border-color: var(--border-light);
+}
+
+.create-sales-return-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-sales-return-title-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: var(--primary-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--primary);
+  font-size: 19px;
+}
+
+.create-sales-return-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.create-sales-return-header p {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+.create-sales-return-message {
+  min-height: 44px;
+  padding: 10px 13px;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.create-sales-return-message.error {
+  color: #dc2626;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+}
+
+.create-sales-return-message.success {
+  color: #16a34a;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.18);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.create-sales-return-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.create-sales-return-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.create-sales-return-card {
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.create-sales-return-card-header {
+  min-height: 68px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+.create-sales-return-card-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+.create-sales-return-card-header p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.create-sales-return-card-header > svg {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.create-sales-return-form-grid {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.create-sales-return-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.create-sales-return-field.full {
+  grid-column: 1 / -1;
+}
+
+.create-sales-return-field label {
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.create-sales-return-field label span {
+  color: var(--danger);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.create-sales-return-field input,
+.create-sales-return-field select,
+.create-sales-return-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--input-border);
+  outline: none;
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.create-sales-return-field input,
+.create-sales-return-field select {
+  height: 41px;
+  padding: 0 11px;
+}
+
+.create-sales-return-field textarea {
+  padding: 11px;
+  resize: vertical;
+  min-height: 95px;
+}
+
+.create-sales-return-field input:focus,
+.create-sales-return-field select:focus,
+.create-sales-return-field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.create-sales-return-field input::placeholder,
+.create-sales-return-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.create-sales-return-field select option {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.create-sales-return-field input:disabled,
+.create-sales-return-field select:disabled,
+.create-sales-return-field textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   DATE INPUT
+========================= */
+
+html.dark-theme
+  .create-sales-return-field
+  input[type="date"] {
+  color-scheme: dark;
+}
+
+html.light-theme
+  .create-sales-return-field
+  input[type="date"] {
+  color-scheme: light;
+}
+
+/* =========================
+   INPUT ICON
+========================= */
+
+.create-sales-return-input-icon {
+  position: relative;
+}
+
+.create-sales-return-input-icon > svg {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.create-sales-return-input-icon input {
+  padding-left: 34px;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.create-sales-return-info-grid {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.create-sales-return-info-item {
+  padding: 11px;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+}
+
+.create-sales-return-info-item span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.create-sales-return-info-item strong {
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+/* =========================
+   ITEMS
+========================= */
+
+.create-sales-return-items-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.create-sales-return-items-header-right > svg {
+  color: var(--primary);
+}
+
+.create-sales-return-loading-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.create-sales-return-loading-text svg {
+  animation: createSalesReturnSpin 0.9s linear infinite;
+}
+
+/* =========================
+   ITEMS TABLE
+========================= */
+
+.create-sales-return-items-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.create-sales-return-items-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.create-sales-return-items-table th {
+  padding: 12px 14px;
+  text-align: left;
+  color: var(--text-muted);
+  background: var(--table-header);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.create-sales-return-items-table td {
+  padding: 13px 14px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.create-sales-return-items-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.create-sales-return-items-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.create-sales-return-items-table tbody tr:hover {
+  background: var(--table-row-hover);
+}
+
+/* =========================
+   PRODUCT CELL
+========================= */
+
+.create-sales-return-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 200px;
+}
+
+.create-sales-return-product-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.create-sales-return-product-cell strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.create-sales-return-product-cell span {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 9px;
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.create-sales-return-qty-text {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.create-sales-return-returnable {
+  color: var(--primary);
+  font-weight: 650;
+}
+
+.create-sales-return-qty-input {
+  width: 78px !important;
+  height: 36px !important;
+  padding: 0 8px !important;
+  text-align: center;
+}
+
+.create-sales-return-line-total {
+  color: var(--text-primary);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* =========================
+   REMOVE BUTTON
+========================= */
+
+.create-sales-return-remove-btn {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.create-sales-return-remove-btn:hover:not(:disabled) {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.create-sales-return-remove-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================
+   EMPTY ITEMS
+========================= */
+
+.create-sales-return-items-empty {
+  min-height: 230px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.create-sales-return-items-empty > svg {
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 25px;
+}
+
+.create-sales-return-items-empty h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.create-sales-return-items-empty p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* =========================
+   SETTLEMENT
+========================= */
+
+.create-sales-return-settlement {
+  padding: 18px;
+}
+
+.create-sales-return-total-box {
+  margin-top: 18px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-radius: 9px;
+  background: var(--primary-light);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+.create-sales-return-total-box span {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.create-sales-return-total-box strong {
+  color: var(--text-primary);
+  font-size: 19px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.create-sales-return-footer {
+  margin-top: 18px;
+  padding: 14px 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.create-sales-return-cancel-btn,
+.create-sales-return-submit-btn {
+  min-height: 42px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.create-sales-return-cancel-btn {
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+}
+
+.create-sales-return-cancel-btn:hover {
+  color: var(--text-primary);
+  background: var(--card-bg-hover);
+  border-color: var(--border-light);
+}
+
+.create-sales-return-submit-btn {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.create-sales-return-submit-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.create-sales-return-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.create-sales-return-spin {
+  animation: createSalesReturnSpin 0.9s linear infinite;
+}
+
+@keyframes createSalesReturnSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.create-sales-return-page::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.create-sales-return-page::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.create-sales-return-page::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+.create-sales-return-page::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .create-sales-return-grid,
+  .create-sales-return-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .create-sales-return-page {
+    padding: 16px;
+  }
+
+  .create-sales-return-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .create-sales-return-field.full {
+    grid-column: auto;
+  }
+
+  .create-sales-return-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .create-sales-return-footer {
+    flex-direction: column-reverse;
+  }
+
+  .create-sales-return-cancel-btn,
+  .create-sales-return-submit-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .create-sales-return-page *,
+  .create-sales-return-page *::before,
+  .create-sales-return-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

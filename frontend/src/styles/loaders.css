@@ -1,0 +1,157 @@
+/* ================================
+   PAGE LOADER
+================================ */
+
+.page-loader {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.page-loader-spinner {
+    width: 38px;
+    height: 38px;
+
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: loaderSpin 0.8s linear infinite;
+}
+
+
+/* ================================
+   COMMON SPINNER
+================================ */
+
+.common-spinner {
+    display: inline-block;
+
+    border: 2px solid var(--border-light);
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: loaderSpin 0.7s linear infinite;
+}
+
+.common-spinner-small {
+    width: 14px;
+    height: 14px;
+}
+
+.common-spinner-medium {
+    width: 20px;
+    height: 20px;
+}
+
+.common-spinner-large {
+    width: 28px;
+    height: 28px;
+}
+
+
+/* ================================
+   BUTTON LOADER
+================================ */
+
+.button-loader {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+/* ================================
+   TABLE LOADER
+================================ */
+
+.table-loader {
+    width: 100%;
+}
+
+.table-loader-row {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(100px, 1fr)
+    );
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-loader-cell {
+    min-width: 0;
+}
+
+.table-loader-skeleton {
+    display: block;
+
+    width: 100%;
+    height: 16px;
+
+    border-radius: 6px;
+
+    background: linear-gradient(
+        90deg,
+        var(--bg-tertiary) 25%,
+        var(--border-light) 50%,
+        var(--bg-tertiary) 75%
+    );
+
+    background-size: 200% 100%;
+
+    animation: skeletonLoading 1.5s infinite;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes loaderSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes skeletonLoading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+    .page-loader {
+        min-height: 220px;
+    }
+
+    .table-loader-row {
+        gap: 8px;
+        padding: 12px;
+    }
+}

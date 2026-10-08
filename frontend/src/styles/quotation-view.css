@@ -1,0 +1,615 @@
+/* ================================
+   QUOTATION VIEW PAGE
+================================ */
+
+.quotation-view-page {
+    min-height: 100%;
+    padding: 24px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.quotation-view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.quotation-view-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.quotation-back-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.quotation-back-icon:hover {
+    color: var(--text-primary);
+    border-color: rgba(37, 99, 235, 0.5);
+    background: var(--primary-light);
+    transform: translateX(-2px);
+}
+
+.quotation-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quotation-title-row > svg {
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.quotation-title-row h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.quotation-view-title p {
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ================================
+   EDIT BUTTON
+================================ */
+
+.quotation-edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 17px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.quotation-edit-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.2);
+}
+
+/* ================================
+   STATUS
+================================ */
+
+.quotation-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.status-draft {
+    background: rgba(148, 163, 184, 0.12);
+    color: var(--text-secondary);
+}
+
+.status-sent {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.status-accepted {
+    background: rgba(34, 197, 94, 0.14);
+    color: var(--success);
+}
+
+.status-rejected {
+    background: rgba(239, 68, 68, 0.14);
+    color: var(--danger);
+}
+
+.status-expired {
+    background: rgba(245, 158, 11, 0.14);
+    color: var(--warning);
+}
+
+.status-cancelled {
+    background: rgba(239, 68, 68, 0.12);
+    color: var(--danger);
+}
+
+/* ================================
+   BASIC INFO
+================================ */
+
+.quotation-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.quotation-info-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+    transition: all 0.25s ease;
+}
+
+.quotation-info-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+.quotation-info-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 19px;
+}
+
+.quotation-info-card span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.quotation-info-card strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ================================
+   DETAIL CARDS
+================================ */
+
+.quotation-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.quotation-detail-card {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+}
+
+.quotation-detail-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.quotation-detail-card h2 svg {
+    color: var(--primary);
+    font-size: 17px;
+}
+
+.quotation-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.quotation-detail-content p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 0;
+}
+
+.quotation-detail-content span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.quotation-detail-content strong {
+    max-width: 65%;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* ================================
+   ITEMS CARD
+================================ */
+
+.quotation-items-card {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+}
+
+.quotation-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.quotation-section-title h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.quotation-section-title h2 svg {
+    color: var(--primary);
+}
+
+.quotation-section-title > span {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* ================================
+   ITEMS TABLE
+================================ */
+
+.quotation-items-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.quotation-items-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.quotation-items-table th {
+    padding: 13px 15px;
+    background: var(--table-header);
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.quotation-items-table td {
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.quotation-items-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.quotation-items-table tbody tr:hover {
+    background: var(--table-row-hover);
+}
+
+.quotation-items-table td:first-child {
+    width: 45px;
+    color: var(--text-muted);
+}
+
+.quotation-items-table td strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.quotation-items-table td:last-child {
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+/* ================================
+   BOTTOM SECTION
+================================ */
+
+.quotation-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+    align-items: start;
+}
+
+.quotation-notes-card,
+.quotation-total-card {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+}
+
+.quotation-notes-card h2 {
+    margin: 0 0 10px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.quotation-notes-card h2:not(:first-child) {
+    margin-top: 22px;
+}
+
+.quotation-notes-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* ================================
+   TOTALS
+================================ */
+
+.quotation-total-card {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.quotation-total-card > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.quotation-total-card span {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.quotation-total-card strong {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.quotation-grand-total {
+    margin-top: 5px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.quotation-grand-total span {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.quotation-grand-total strong {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ================================
+   LOADING
+================================ */
+
+.quotation-view-loader {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--text-secondary);
+}
+
+.quotation-view-loader p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.quotation-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: quotationSpin 0.8s linear infinite;
+}
+
+@keyframes quotationSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   ERROR
+================================ */
+
+.quotation-view-error {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 9px;
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--danger);
+    font-size: 13px;
+}
+
+.quotation-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+
+.quotation-back-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(37, 99, 235, 0.4);
+    background: var(--card-bg-hover);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1200px) {
+    .quotation-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quotation-details-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quotation-details-grid
+        .quotation-detail-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 900px) {
+    .quotation-view-page {
+        padding: 18px;
+    }
+
+    .quotation-view-header {
+        align-items: flex-start;
+    }
+
+    .quotation-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .quotation-view-page {
+        padding: 14px;
+    }
+
+    .quotation-view-header {
+        flex-direction: column;
+    }
+
+    .quotation-edit-btn {
+        width: 100%;
+    }
+
+    .quotation-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quotation-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quotation-details-grid
+        .quotation-detail-card:last-child {
+        grid-column: auto;
+    }
+
+    .quotation-title-row {
+        flex-wrap: wrap;
+    }
+
+    .quotation-title-row h1 {
+        font-size: 20px;
+    }
+
+    .quotation-detail-content p {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .quotation-detail-content strong {
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 420px) {
+    .quotation-view-page {
+        padding: 10px;
+    }
+
+    .quotation-info-card,
+    .quotation-detail-card,
+    .quotation-notes-card,
+    .quotation-total-card {
+        padding: 15px;
+    }
+
+    .quotation-title-row h1 {
+        font-size: 18px;
+    }
+
+    .quotation-section-title {
+        padding: 15px;
+    }
+
+    .quotation-items-table th,
+    .quotation-items-table td {
+        padding: 11px 10px;
+    }
+}

@@ -1,0 +1,132 @@
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.main-layout {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    overflow-x: hidden;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.main-content {
+    width: calc(100% - 260px);
+    min-width: 0;
+    min-height: 100vh;
+
+    margin-left: 260px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        width 0.3s ease,
+        margin-left 0.3s ease;
+
+    overflow-x: hidden;
+}
+
+.page-content {
+    flex: 1;
+
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
+    padding: 28px;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(37, 99, 235, 0.05),
+            transparent 30%
+        ),
+        var(--bg-primary);
+
+    color: var(--text-primary);
+
+    overflow-x: hidden;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .main-content {
+        width: calc(100% - 230px);
+
+        min-width: 0;
+
+        margin-left: 230px;
+    }
+
+    .page-content {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 22px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        width: 100%;
+
+        min-width: 0;
+
+        margin-left: 0;
+    }
+
+    .page-content {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    .page-content {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 14px;
+    }
+}

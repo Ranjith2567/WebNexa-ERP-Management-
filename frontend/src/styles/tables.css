@@ -1,0 +1,290 @@
+/* ================================
+   COMMON TABLE
+================================ */
+
+.common-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.common-table {
+    width: 100%;
+    min-width: 700px;
+
+    border-collapse: collapse;
+}
+
+.common-table th {
+    padding: 14px 16px;
+
+    background: var(--table-header);
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.common-table td {
+    padding: 14px 16px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.common-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.common-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.common-table tbody tr:hover {
+    background: var(--table-row-hover);
+}
+
+/* ================================
+   LOADING
+================================ */
+
+.common-table-loading {
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ================================
+   TABLE HEADER
+================================ */
+
+.common-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+.common-table-header h3 {
+    margin: 0 0 4px;
+
+    color: var(--text-primary);
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.common-table-header p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+.common-table-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ================================
+   TABLE ACTIONS
+================================ */
+
+.common-table-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.common-table-action {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.common-table-action:hover {
+    color: var(--text-primary);
+    background: var(--card-bg-hover);
+    border-color: var(--border-light);
+}
+
+.common-table-action.view:hover {
+    color: #60a5fa;
+}
+
+.common-table-action.edit:hover {
+    color: #fbbf24;
+}
+
+.common-table-action.delete:hover {
+    color: #ef4444;
+}
+
+/* ================================
+   EMPTY TABLE
+================================ */
+
+.common-empty-table {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: var(--text-muted);
+}
+
+.common-empty-table-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--bg-tertiary);
+
+    font-size: 20px;
+}
+
+.common-empty-table p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+/* ================================
+   PAGINATION
+================================ */
+
+.common-table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-top: 14px;
+}
+
+.common-table-pagination-info {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.common-table-pagination-info strong {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.common-table-pagination-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.common-table-pagination-buttons button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+
+    background: var(--card-bg);
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.common-table-pagination-buttons button:hover:not(:disabled) {
+    background: var(--primary-light);
+    border-color: rgba(37, 99, 235, 0.35);
+    color: var(--primary);
+}
+
+.common-table-pagination-buttons button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+    .common-table-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .common-table-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .common-table-pagination-buttons {
+        width: 100%;
+    }
+
+    .common-table-pagination-buttons button {
+        flex: 1;
+        justify-content: center;
+    }
+}

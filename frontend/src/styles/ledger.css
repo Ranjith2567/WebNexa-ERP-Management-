@@ -1,0 +1,1186 @@
+/* =====================================================
+   LEDGER PAGE
+===================================================== */
+
+.ledger-page {
+    width: 100%;
+    min-height: 100%;
+    padding: 24px;
+    color: var(--text-primary);
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.ledger-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.ledger-title-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ledger-title-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 23px;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+.ledger-header h1 {
+    margin: 0 0 4px;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.ledger-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.ledger-refresh-btn {
+    height: 42px;
+    padding: 0 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 9px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.ledger-refresh-btn:hover {
+    background: var(--card-bg-hover);
+    color: var(--text-primary);
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.ledger-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ledger-spin {
+    animation: ledgerSpin 1s linear infinite;
+}
+
+@keyframes ledgerSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =====================================================
+   ALERTS
+===================================================== */
+
+.ledger-alert {
+    min-height: 44px;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.ledger-alert button {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ledger-alert-error {
+    color: #dc2626;
+    background: rgba(239, 68, 68, 0.09);
+    border: 1px solid rgba(239, 68, 68, 0.18);
+}
+
+.ledger-alert-success {
+    color: #16a34a;
+    background: rgba(34, 197, 94, 0.09);
+    border: 1px solid rgba(34, 197, 94, 0.18);
+}
+
+/* =====================================================
+   VIEW TABS
+===================================================== */
+
+.ledger-view-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.ledger-view-tab {
+    height: 38px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ledger-view-tab:hover {
+    color: var(--text-primary);
+}
+
+.ledger-view-tab.active {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* =====================================================
+   FILTER CARD
+===================================================== */
+
+.ledger-filter-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.ledger-filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.ledger-filter-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.ledger-filter-header h3 svg {
+    color: var(--primary);
+}
+
+.ledger-filter-header span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.ledger-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.ledger-field {
+    min-width: 0;
+}
+
+.ledger-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ledger-field label span {
+    margin-left: 3px;
+    color: var(--danger);
+}
+
+.ledger-field select,
+.ledger-field input {
+    width: 100%;
+    height: 40px;
+    padding: 0 11px;
+    box-sizing: border-box;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+    font-size: 12px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.ledger-field select:focus,
+.ledger-field input:focus {
+    border-color: rgba(37, 99, 235, 0.7);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.ledger-field select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ledger-field select option {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.ledger-date-input,
+.ledger-search-input {
+    position: relative;
+}
+
+.ledger-date-input svg,
+.ledger-search-input svg {
+    position: absolute;
+    top: 50%;
+    left: 11px;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.ledger-date-input input {
+    padding-left: 35px;
+}
+
+.ledger-search-input input {
+    padding-left: 35px;
+}
+
+.ledger-filter-actions {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.ledger-apply-btn,
+.ledger-clear-btn {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ledger-apply-btn {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.ledger-apply-btn:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.ledger-clear-btn {
+    border: 1px solid var(--border-light);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.ledger-clear-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-light);
+    background: var(--card-bg-hover);
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.ledger-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.ledger-summary-card {
+    min-height: 92px;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 11px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.ledger-summary-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.ledger-summary-icon.debit {
+    color: #dc2626;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.ledger-summary-icon.credit {
+    color: #16a34a;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.ledger-summary-icon.balance {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.ledger-summary-icon.entries {
+    color: #7c3aed;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.ledger-summary-card span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.ledger-summary-card strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.ledger-summary-card strong small {
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+.positive-balance {
+    color: var(--success) !important;
+}
+
+.negative-balance {
+    color: var(--danger) !important;
+}
+
+/* =====================================================
+   CONTEXT BAR
+===================================================== */
+
+.ledger-context-bar {
+    min-height: 44px;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    border-radius: 9px;
+    background: rgba(37, 99, 235, 0.06);
+    border: 1px solid rgba(37, 99, 235, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.ledger-context-left {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    font-size: 12px;
+}
+
+.ledger-context-left span {
+    color: var(--text-muted);
+}
+
+.ledger-context-left strong {
+    color: var(--text-secondary);
+}
+
+.ledger-context-separator {
+    color: var(--text-muted) !important;
+}
+
+.ledger-context-right {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.ledger-table-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ledger-table-header {
+    min-height: 68px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ledger-table-header h3 {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-size: 15px;
+}
+
+.ledger-table-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.ledger-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ledger-table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+}
+
+.ledger-table th {
+    height: 44px;
+    padding: 0 13px;
+    background: var(--table-header);
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.ledger-table td {
+    height: 62px;
+    padding: 8px 13px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.ledger-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.ledger-table tbody tr:hover {
+    background: var(--table-row-hover);
+}
+
+.ledger-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.amount-column {
+    text-align: right !important;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.debit-column {
+    color: var(--danger) !important;
+}
+
+.credit-column {
+    color: var(--success) !important;
+}
+
+.ledger-date-cell {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.ledger-date-cell svg {
+    color: var(--text-muted);
+}
+
+.ledger-journal-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ledger-journal-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.ledger-account-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-width: 180px;
+}
+
+.ledger-account-cell strong {
+    color: var(--text-primary);
+    font-size: 12px;
+}
+
+.ledger-account-cell span {
+    overflow: hidden;
+    color: var(--text-muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.ledger-description-cell {
+    max-width: 190px;
+    overflow: hidden;
+    color: var(--text-secondary);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ledger-reference-badge {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 5px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.ledger-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 62px;
+    height: 24px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.ledger-status.posted {
+    color: var(--success);
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.ledger-status.cancelled {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.ledger-status.draft {
+    color: var(--warning);
+    background: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.15);
+}
+
+.ledger-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ledger-icon-btn {
+    width: 31px;
+    height: 31px;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ledger-icon-btn.view {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--primary);
+}
+
+.ledger-icon-btn.view:hover {
+    background: rgba(37, 99, 235, 0.18);
+}
+
+.ledger-icon-btn.account {
+    background: rgba(139, 92, 246, 0.08);
+    color: #7c3aed;
+}
+
+.ledger-icon-btn.account:hover {
+    background: rgba(139, 92, 246, 0.18);
+}
+
+/* =====================================================
+   EMPTY / LOADING
+===================================================== */
+
+.ledger-empty-state,
+.ledger-loading-state {
+    min-height: 310px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ledger-empty-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    font-size: 24px;
+}
+
+.ledger-empty-state h3 {
+    margin: 0 0 7px;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.ledger-empty-state p,
+.ledger-loading-state p {
+    margin: 0;
+    max-width: 400px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.ledger-loader {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: ledgerSpin 0.8s linear infinite;
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.ledger-pagination {
+    min-height: 62px;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.ledger-pagination-info {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.ledger-pagination-info strong {
+    color: var(--text-secondary);
+}
+
+.ledger-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ledger-pagination-controls button {
+    min-width: 31px;
+    height: 31px;
+    padding: 0 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 11px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ledger-pagination-controls button:hover:not(:disabled) {
+    border-color: rgba(37, 99, 235, 0.4);
+    color: var(--text-primary);
+    background: var(--card-bg-hover);
+}
+
+.ledger-pagination-controls button.active {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.ledger-pagination-controls button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.ledger-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(2, 6, 23, 0.78);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ledger-view-modal {
+    width: min(820px, 100%);
+    max-height: calc(100vh - 40px);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 80px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.ledger-modal-header {
+    min-height: 76px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ledger-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.ledger-modal-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ledger-modal-title h2 {
+    margin: 0 0 3px;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.ledger-modal-title p {
+    margin: 0;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.ledger-modal-close {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ledger-modal-close:hover {
+    color: var(--text-primary);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.ledger-modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.ledger-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ledger-detail-item {
+    min-height: 65px;
+    padding: 11px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.ledger-detail-item span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ledger-detail-item strong {
+    display: block;
+    overflow: hidden;
+    color: var(--text-secondary);
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ledger-detail-description {
+    margin-bottom: 16px;
+    padding: 13px;
+    border-radius: 8px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.ledger-detail-description span,
+.ledger-reference-id span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ledger-detail-description p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.ledger-entry-amount-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ledger-entry-amount {
+    min-height: 75px;
+    padding: 14px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ledger-entry-amount.debit {
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    color: var(--danger);
+}
+
+.ledger-entry-amount.credit {
+    background: rgba(34, 197, 94, 0.06);
+    border: 1px solid rgba(34, 197, 94, 0.12);
+    color: var(--success);
+}
+
+.ledger-entry-amount span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.ledger-entry-amount strong {
+    font-size: 18px;
+}
+
+.ledger-entry-amount svg {
+    font-size: 22px;
+}
+
+.ledger-reference-id {
+    padding: 13px;
+    border-radius: 8px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.ledger-reference-id strong {
+    color: var(--text-secondary);
+    font-size: 11px;
+    word-break: break-all;
+}
+
+.ledger-modal-footer {
+    min-height: 64px;
+    padding: 12px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border-color);
+}
+
+.ledger-close-btn {
+    height: 38px;
+    padding: 0 18px;
+    border: 1px solid var(--border-light);
+    border-radius: 7px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ledger-close-btn:hover {
+    background: var(--card-bg-hover);
+    color: var(--text-primary);
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.ledger-table-wrapper::-webkit-scrollbar,
+.ledger-modal-body::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.ledger-table-wrapper::-webkit-scrollbar-track,
+.ledger-modal-body::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+.ledger-table-wrapper::-webkit-scrollbar-thumb,
+.ledger-modal-body::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+.ledger-table-wrapper::-webkit-scrollbar-thumb:hover,
+.ledger-modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+    .ledger-filter-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ledger-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ledger-detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .ledger-page {
+        padding: 18px;
+    }
+
+    .ledger-filter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ledger-header {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 650px) {
+    .ledger-page {
+        padding: 14px;
+    }
+
+    .ledger-header {
+        flex-direction: column;
+    }
+
+    .ledger-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ledger-view-tabs {
+        width: 100%;
+    }
+
+    .ledger-view-tab {
+        flex: 1;
+        justify-content: center;
+        padding: 0 8px;
+    }
+
+    .ledger-filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ledger-filter-actions {
+        align-items: stretch;
+    }
+
+    .ledger-apply-btn,
+    .ledger-clear-btn {
+        flex: 1;
+    }
+
+    .ledger-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ledger-context-bar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ledger-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ledger-pagination-controls {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .ledger-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ledger-entry-amount-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ledger-modal-overlay {
+        padding: 10px;
+    }
+
+    .ledger-view-modal {
+        max-height: calc(100vh - 20px);
+    }
+}

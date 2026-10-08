@@ -1,0 +1,888 @@
+/* =====================================================
+   NOTIFICATIONS PAGE
+===================================================== */
+
+.notifications-page {
+    min-height: 100%;
+    padding: 24px;
+    color: var(--text-primary);
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.notifications-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.notifications-title-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.notifications-title-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.notifications-header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.notifications-header p {
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.notifications-header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.notification-action-btn {
+    height: 42px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 9px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.notification-action-btn:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    color: var(--text-primary);
+    background: var(--card-bg-hover);
+}
+
+.notification-action-btn.primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+}
+
+.notification-action-btn.primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.notification-action-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ================================
+   SUMMARY
+================================ */
+
+.notifications-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.notification-summary-card {
+    min-height: 90px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.notification-summary-card .summary-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.notification-summary-card.unread .summary-icon {
+    background: rgba(234, 179, 8, 0.12);
+    color: #ca8a04;
+}
+
+.notification-summary-card.critical .summary-icon {
+    background: rgba(239, 68, 68, 0.12);
+    color: var(--danger);
+}
+
+.notification-summary-card span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.notification-summary-card strong {
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ================================
+   ERROR
+================================ */
+
+.notifications-error {
+    min-height: 48px;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 9px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    font-size: 13px;
+}
+
+.notifications-error button {
+    margin-left: auto;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ================================
+   TOOLBAR
+================================ */
+
+.notifications-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.notification-search {
+    flex: 1;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 13px;
+    border-radius: 9px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition:
+        background-color 0.25s ease,
+        border-color 0.2s ease;
+}
+
+.notification-search:focus-within {
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.notification-search svg {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.notification-search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.notification-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.notifications-toolbar select {
+    height: 42px;
+    min-width: 145px;
+    padding: 0 12px;
+    border-radius: 9px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    outline: none;
+    cursor: pointer;
+}
+
+.notifications-toolbar select:focus {
+    border-color: rgba(37, 99, 235, 0.5);
+}
+
+/* ================================
+   MAIN CARD
+================================ */
+
+.notifications-card {
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+/* ================================
+   LIST
+================================ */
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.25s ease;
+}
+
+.notification-item:last-child {
+    border-bottom: 0;
+}
+
+.notification-item:hover {
+    background: var(--card-bg-hover);
+}
+
+.notification-item.unread {
+    background: rgba(37, 99, 235, 0.035);
+}
+
+.notification-item.unread:hover {
+    background: rgba(37, 99, 235, 0.07);
+}
+
+/* ================================
+   ICON
+================================ */
+
+.notification-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.notification-priority-critical {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+.notification-priority-high {
+    background: rgba(249, 115, 22, 0.12);
+    color: #f97316;
+}
+
+.notification-priority-medium {
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--primary);
+}
+
+.notification-priority-low {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--success);
+}
+
+/* ================================
+   CONTENT
+================================ */
+
+.notification-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.notification-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.notification-top h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.unread-dot {
+    width: 7px;
+    height: 7px;
+    margin-left: 7px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.notification-content > p {
+    margin: 7px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.notification-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+/* ================================
+   PRIORITY BADGE
+================================ */
+
+.priority-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.notification-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.notification-actions button {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.notification-actions button:hover {
+    color: var(--text-primary);
+    border-color: rgba(37, 99, 235, 0.4);
+    background: var(--primary-light);
+}
+
+.notification-actions button.danger:hover {
+    color: var(--danger);
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.08);
+}
+
+/* ================================
+   LOADING
+================================ */
+
+.notifications-loading {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* ================================
+   EMPTY
+================================ */
+
+.notifications-empty {
+    min-height: 300px;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.notifications-empty-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 28px;
+}
+
+.notifications-empty h3 {
+    margin: 0 0 7px;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.notifications-empty p {
+    margin: 0;
+    max-width: 400px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* ================================
+   PAGINATION
+================================ */
+
+.notifications-pagination {
+    margin-top: 15px;
+    padding: 14px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.notifications-pagination strong {
+    color: var(--text-secondary);
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-buttons button {
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    background: var(--table-header);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 12px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+    background: var(--card-bg-hover);
+    border-color: var(--border-light);
+}
+
+.pagination-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-number {
+    min-width: 60px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* ================================
+   MODAL
+================================ */
+
+.notification-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 6, 23, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+.notification-view-modal {
+    width: min(650px, 100%);
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 15px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 25px 60px var(--shadow-color);
+}
+
+/* ================================
+   MODAL HEADER
+================================ */
+
+.notification-modal-header {
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notification-modal-header > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-title-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.notification-modal-header h2 {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-size: 17px;
+}
+
+.notification-modal-header span {
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+.notification-modal-header > button {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 19px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.notification-modal-header > button:hover {
+    color: var(--text-primary);
+    background: var(--table-row-hover);
+}
+
+/* ================================
+   MODAL BODY
+================================ */
+
+.notification-modal-body {
+    padding: 20px;
+}
+
+.notification-detail-message {
+    margin-bottom: 20px;
+}
+
+.notification-detail-message label,
+.notification-detail-grid label,
+.notification-reference label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.notification-detail-message p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.notification-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+.notification-detail-grid > div {
+    min-width: 0;
+}
+
+.notification-detail-grid p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.read-status {
+    display: inline-flex;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.read-status.read {
+    color: var(--success);
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.read-status.unread {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.notification-reference {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--primary-light);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.notification-reference > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.notification-reference span {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.notification-reference code {
+    padding: 4px 7px;
+    border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text-secondary);
+    font-size: 10px;
+    word-break: break-all;
+}
+
+/* ================================
+   MODAL FOOTER
+================================ */
+
+.notification-modal-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-primary-btn,
+.modal-secondary-btn {
+    height: 38px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.modal-primary-btn {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.modal-primary-btn:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.modal-secondary-btn {
+    border: 1px solid var(--border-color);
+    background: var(--table-header);
+    color: var(--text-secondary);
+}
+
+.modal-secondary-btn:hover {
+    background: var(--card-bg-hover);
+    color: var(--text-primary);
+}
+
+/* ================================
+   ANIMATION
+================================ */
+
+.spin-icon {
+    animation: notificationSpin 0.9s linear infinite;
+}
+
+@keyframes notificationSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+    .notifications-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .notifications-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .notification-search {
+        flex: 1 1 100%;
+    }
+
+    .notifications-toolbar select {
+        flex: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .notifications-page {
+        padding: 15px;
+    }
+
+    .notifications-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .notifications-header-actions {
+        width: 100%;
+    }
+
+    .notification-action-btn {
+        flex: 1;
+    }
+
+    .notification-item {
+        padding: 15px;
+    }
+
+    .notification-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .notification-actions {
+        flex-direction: column;
+    }
+
+    .notifications-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .notification-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .notifications-toolbar select {
+        min-width: 100%;
+    }
+
+    .notification-item {
+        gap: 10px;
+    }
+
+    .notification-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .notification-actions button {
+        width: 30px;
+        height: 30px;
+    }
+}

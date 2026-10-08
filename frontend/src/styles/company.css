@@ -1,0 +1,953 @@
+/* =========================================
+   COMPANY PAGE
+========================================= */
+
+.company-page {
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 30px;
+  animation: companyEnter 0.5s ease;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.company-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.company-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.company-title-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 21px;
+}
+
+.company-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 25px;
+}
+
+.company-header p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.company-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.company-add-btn:hover {
+  transform: translateY(-2px);
+
+  background: var(--primary-hover);
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.company-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.company-search {
+  width: 380px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px 14px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  background: var(--card-bg);
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.25s ease;
+}
+
+.company-search:focus-within {
+  border-color: var(--primary);
+}
+
+.company-search svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.company-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+.company-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.company-count {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.company-error {
+  margin-bottom: 18px;
+  padding: 12px 15px;
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   COMPANY GRID
+========================================= */
+
+.company-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   COMPANY CARD
+========================================= */
+
+.company-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: 17px;
+
+  background: var(--card-bg);
+
+  box-shadow:
+    0 12px 35px var(--shadow-color);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.25s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--border-light);
+
+  box-shadow:
+    0 20px 45px var(--shadow-color);
+}
+
+.company-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 18px 0;
+}
+
+.company-logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 20px;
+}
+
+.company-card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.company-card-actions button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.company-card-actions button:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.company-card-actions button.delete:hover {
+  border-color: var(--danger);
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.company-card-body {
+  padding: 18px;
+}
+
+.company-card-body h3 {
+  margin: 0 0 5px;
+
+  color: var(--text-primary);
+
+  font-size: 18px;
+}
+
+.company-legal-name {
+  margin: 0 0 18px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.company-detail {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 11px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.company-detail svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.company-detail span {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.company-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 18px;
+
+  border-top: 1px solid var(--border-color);
+
+  background: var(--bg-tertiary);
+}
+
+.company-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--success);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.company-status > span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--success);
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+.company-status.inactive {
+  color: var(--danger);
+}
+
+.company-status.inactive > span {
+  background: var(--danger);
+}
+
+.company-id {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.company-empty {
+  min-height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  background: var(--card-bg);
+
+  text-align: center;
+}
+
+.company-empty-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 18px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 27px;
+}
+
+.company-empty h3 {
+  margin: 0 0 7px;
+
+  color: var(--text-primary);
+
+  font-size: 18px;
+}
+
+.company-empty p {
+  margin: 0 0 18px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.company-loading {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-secondary);
+}
+
+.company-loader {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 14px;
+
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary);
+
+  border-radius: 50%;
+
+  animation: companySpin 0.8s linear infinite;
+}
+
+.company-loading p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.company-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.78);
+
+  backdrop-filter: blur(7px);
+}
+
+.company-modal {
+  width: min(680px, 100%);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+
+  background: var(--card-bg);
+
+  box-shadow:
+    0 30px 80px var(--shadow-color);
+
+  animation: companyModalEnter 0.25s ease;
+}
+
+.company-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.company-modal-header h3 {
+  margin: 0 0 5px;
+
+  color: var(--text-primary);
+
+  font-size: 19px;
+}
+
+.company-modal-header p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.company-modal-header > button {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.company-modal-header > button:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.company-form {
+  padding: 24px;
+}
+
+.company-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.company-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.company-form-group.full {
+  grid-column: 1 / -1;
+}
+
+.company-form-group label {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.company-form-group input,
+.company-form-group textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--input-border);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--input-bg);
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.company-form-group textarea {
+  resize: vertical;
+}
+
+.company-form-group input::placeholder,
+.company-form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.company-form-group input:focus,
+.company-form-group textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.company-form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 24px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border-color);
+}
+
+.company-cancel-btn,
+.company-save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.company-cancel-btn {
+  border: 1px solid var(--border-light);
+
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.company-cancel-btn:hover {
+  background: var(--card-bg-hover);
+  color: var(--text-primary);
+}
+
+.company-save-btn {
+  border: 1px solid var(--primary);
+
+  background: var(--primary);
+  color: #ffffff;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.company-save-btn:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+
+/* =========================================
+   VIEW MODAL
+========================================= */
+
+.company-view-modal {
+  padding: 24px;
+}
+
+.company-view-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.company-view-logo {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 22px;
+}
+
+.company-view-header h3 {
+  margin: 0 0 5px;
+
+  color: var(--text-primary);
+
+  font-size: 20px;
+}
+
+.company-view-header p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+.company-view-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  padding-top: 22px;
+}
+
+.company-view-details span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+.company-view-details strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  word-break: break-word;
+}
+
+.view-active {
+  color: var(--success) !important;
+}
+
+.view-inactive {
+  color: var(--danger) !important;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes companyEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes companyModalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes companySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .company-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .company-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .company-add-btn {
+    width: 100%;
+  }
+
+  .company-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .company-search {
+    width: 100%;
+  }
+
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-form-grid,
+  .company-view-details {
+    grid-template-columns: 1fr;
+  }
+
+  .company-form-group.full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .company-header h2 {
+    font-size: 21px;
+  }
+
+  .company-title-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .company-card-top {
+    padding: 15px 15px 0;
+  }
+
+  .company-card-body {
+    padding: 15px;
+  }
+
+  .company-card-footer {
+    padding: 12px 15px;
+  }
+
+  .company-form {
+    padding: 18px;
+  }
+
+  .company-modal-header {
+    padding: 18px;
+  }
+
+  .company-view-modal {
+    padding: 18px;
+  }
+
+  .company-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .company-cancel-btn,
+  .company-save-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .company-page,
+  .company-card,
+  .company-modal,
+  .company-loader {
+    animation: none;
+    transition: none;
+  }
+}

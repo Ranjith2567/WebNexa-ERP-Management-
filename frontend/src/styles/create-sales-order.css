@@ -1,0 +1,901 @@
+/* =====================================================
+   CREATE SALES ORDER
+   WebNexa ERP - Professional Theme
+===================================================== */
+
+.create-sales-order-page {
+  padding: 24px;
+  min-height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.create-sales-order-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.create-sales-order-header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* =====================================================
+   BACK TO SALES ORDERS
+===================================================== */
+
+.back-to-orders {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: fit-content;
+  min-width: 190px;
+  height: 38px;
+
+  padding: 0 14px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  color: var(--text-secondary);
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
+}
+
+.back-to-orders svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.back-to-orders:hover {
+  color: var(--text-primary);
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.create-sales-order-header h1 {
+  margin: 12px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.create-sales-order-header p {
+  margin: 5px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.sales-order-error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--danger);
+
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.sales-order-card {
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.sales-order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 17px 20px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  background: var(--card-bg);
+}
+
+.sales-order-card-header h2 {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.sales-order-card-header p {
+  margin: 7px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.sales-order-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  padding: 20px;
+}
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.form-group label {
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: var(--text-secondary);
+}
+
+.form-group label span {
+  color: var(--danger);
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  min-height: 40px;
+
+  box-sizing: border-box;
+
+  background: var(--input-bg);
+
+  border: 1px solid var(--input-border);
+
+  color: var(--text-primary);
+
+  border-radius: 7px;
+
+  padding: 10px 12px;
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+/* =====================================================
+   DATE INPUT
+===================================================== */
+
+.form-group input[type="date"] {
+  color-scheme: light;
+}
+
+html.dark-theme .form-group input[type="date"] {
+  color-scheme: dark;
+}
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.form-group textarea {
+  resize: vertical;
+
+  min-height: 110px;
+
+  font-family: inherit;
+
+  line-height: 1.5;
+}
+
+/* =====================================================
+   FULL WIDTH FIELD
+===================================================== */
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =====================================================
+   ORDER ITEMS HEADER
+===================================================== */
+
+.order-items-header {
+  min-height: 68px;
+}
+
+/* =====================================================
+   ADD ITEM BUTTON
+===================================================== */
+
+.add-item-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  background: var(--primary);
+
+  color: #ffffff;
+
+  border: 1px solid var(--primary);
+
+  border-radius: 7px;
+
+  padding: 9px 14px;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.add-item-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.add-item-button:hover {
+  background: var(--primary-hover);
+
+  border-color: var(--primary-hover);
+}
+
+/* =====================================================
+   ORDER ITEMS CONTAINER
+===================================================== */
+
+.order-items-container {
+  padding: 20px;
+
+  overflow-x: auto;
+}
+
+/* =====================================================
+   ORDER ITEM ROW
+===================================================== */
+
+.order-item-row {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1.4fr
+    80px
+    120px
+    100px
+    90px
+    120px
+    40px;
+
+  gap: 12px;
+
+  align-items: end;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--border-color);
+
+  min-width: 1100px;
+}
+
+.order-item-row:first-child {
+  padding-top: 0;
+}
+
+.order-item-row:last-child {
+  border-bottom: none;
+}
+
+/* =====================================================
+   PRODUCT FIELD
+===================================================== */
+
+.product-field {
+  min-width: 180px;
+}
+
+/* =====================================================
+   LINE TOTAL
+===================================================== */
+
+.line-total-field {
+  min-width: 100px;
+}
+
+.line-total {
+  min-height: 40px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 12px;
+
+  background: var(--primary-light);
+
+  border: 1px solid rgba(37, 99, 235, 0.15);
+
+  border-radius: 7px;
+
+  color: var(--primary);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   REMOVE ITEM
+===================================================== */
+
+.remove-item-button {
+  width: 38px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  color: var(--danger);
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.remove-item-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.remove-item-button:hover {
+  background: rgba(239, 68, 68, 0.16);
+
+  border-color: var(--danger);
+}
+
+.remove-item-button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   TOTALS
+===================================================== */
+
+.sales-order-totals {
+  width: 320px;
+
+  margin-left: auto;
+
+  padding: 0 20px 20px;
+
+  box-sizing: border-box;
+}
+
+.total-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 8px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+.total-row strong {
+  color: var(--text-primary);
+
+  font-weight: 500;
+}
+
+.total-row.grand-total {
+  margin-top: 7px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid var(--border-color);
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+.total-row.grand-total strong {
+  color: var(--primary);
+
+  font-size: 17px;
+}
+
+/* =====================================================
+   ADDITIONAL INFORMATION
+===================================================== */
+
+.sales-order-textarea-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  padding: 20px;
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.sales-order-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 4px 0 20px;
+}
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.cancel-button {
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 17px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-color);
+
+  color: var(--text-secondary);
+}
+
+.cancel-button:hover {
+  background: var(--card-bg-hover);
+
+  color: var(--text-primary);
+
+  border-color: var(--border-light);
+}
+
+/* =====================================================
+   CREATE ORDER BUTTON
+===================================================== */
+
+.save-order-button {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  background: var(--primary);
+
+  border: 1px solid var(--primary);
+
+  color: #ffffff;
+
+  min-width: 145px;
+}
+
+.save-order-button:hover {
+  background: var(--primary-hover);
+
+  border-color: var(--primary-hover);
+}
+
+.save-order-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   DATALIST / MANUAL INPUT
+===================================================== */
+
+.form-group input[list] {
+  cursor: text;
+}
+
+/*
+  Datalist is controlled by the browser.
+  The input remains fully editable while
+  existing records appear as suggestions.
+*/
+
+.form-group input[list]:focus {
+  border-color: var(--primary);
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.create-sales-order-loading {
+  min-height: 400px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   RESPONSIVE - 1200px
+===================================================== */
+
+@media (max-width: 1200px) {
+  .sales-order-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-item-row {
+    min-width: 1050px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+  .create-sales-order-page {
+    padding: 16px;
+  }
+
+  .sales-order-form-grid {
+    grid-template-columns: 1fr;
+
+    padding: 16px;
+  }
+
+  .sales-order-textarea-grid {
+    grid-template-columns: 1fr;
+
+    padding: 16px;
+  }
+
+  .sales-order-totals {
+    width: auto;
+
+    margin-left: 0;
+  }
+
+  .create-sales-order-header h1 {
+    font-size: 20px;
+  }
+
+  .order-items-container {
+    padding: 16px;
+  }
+
+  .sales-order-actions {
+    justify-content: stretch;
+  }
+
+  .cancel-button,
+  .save-order-button {
+    flex: 1;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+  .create-sales-order-page {
+    padding: 12px;
+  }
+
+  .sales-order-card-header {
+    padding: 14px;
+  }
+
+  .sales-order-form-grid,
+  .order-items-container,
+  .sales-order-textarea-grid {
+    padding: 14px;
+  }
+
+  .create-sales-order-header {
+    margin-bottom: 18px;
+  }
+
+  .back-to-orders {
+    min-width: 0;
+
+    width: auto;
+
+    padding: 0 12px;
+  }
+
+  .create-sales-order-header h1 {
+    font-size: 19px;
+  }
+
+  .sales-order-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+  }
+
+  .cancel-button,
+  .save-order-button {
+    width: 100%;
+
+    flex: none;
+  }
+
+  .sales-order-totals {
+    width: 100%;
+  }
+}
+/* ==========================================
+   SALES ORDER BARCODE SCANNER
+========================================== */
+
+.sales-order-barcode {
+  margin: 0 0 24px;
+  padding: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+
+.sales-order-barcode-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.sales-order-barcode-header label {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sales-order-barcode-header span {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.sales-order-barcode-input {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.sales-order-barcode-input input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sales-order-barcode-input input::placeholder {
+  color: var(--text-secondary);
+}
+
+.sales-order-barcode-input input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px
+    rgba(59, 130, 246, 0.12);
+}
+
+.sales-order-barcode-input input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.sales-order-barcode-input button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 110px;
+  height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sales-order-barcode-input button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.sales-order-barcode-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .sales-order-barcode {
+    padding: 14px;
+  }
+
+  .sales-order-barcode-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sales-order-barcode-input {
+    flex-direction: column;
+  }
+
+  .sales-order-barcode-input button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,716 @@
+/* =========================================
+   WEBNEXA ERP - SIDEBAR
+   Premium Responsive Version
+   Theme Compatible
+   ========================================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    var(--bg-secondary);
+
+  border-right: 1px solid var(--border-color);
+
+  color: var(--text-primary);
+
+  z-index: 1000;
+
+  overflow: hidden;
+
+  animation: sidebarEnter 0.45s ease-out;
+}
+
+
+/* =========================================
+   SIDEBAR ENTRY ANIMATION
+   ========================================= */
+
+@keyframes sidebarEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.sidebar-logo {
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  flex-shrink: 0;
+}
+
+.sidebar-logo-mark {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 25px rgba(37, 99, 235, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sidebar-logo:hover .sidebar-logo-mark {
+  transform: rotate(-5deg) scale(1.06);
+
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.4);
+}
+
+.sidebar-logo-text {
+  margin-left: 12px;
+
+  overflow: hidden;
+}
+
+.sidebar-logo-text h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  color: var(--text-primary);
+}
+
+.sidebar-logo-text span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #60a5fa;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.sidebar-nav {
+  flex: 1;
+
+  padding: 22px 14px;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.sidebar-section-title {
+  margin: 0 10px 12px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   NAV LINK
+   ========================================= */
+
+.sidebar-link {
+  position: relative;
+
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 5px;
+  padding: 0 12px;
+
+  border-radius: 9px;
+
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Hover glow */
+
+.sidebar-link::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.06),
+    transparent
+  );
+
+  transition: left 0.5s ease;
+}
+
+.sidebar-link:hover::before {
+  left: 100%;
+}
+
+.sidebar-link:hover {
+  background: var(--card-bg-hover);
+
+  color: var(--text-primary);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   ACTIVE LINK
+   ========================================= */
+
+.sidebar-link.active {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 22px rgba(37, 99, 235, 0.22);
+
+  animation: activeLink 0.3s ease-out;
+}
+
+@keyframes activeLink {
+  from {
+    opacity: 0.7;
+    transform: translateX(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   ACTIVE INDICATOR
+   ========================================= */
+
+.sidebar-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 9px;
+
+  width: 3px;
+  height: 26px;
+
+  border-radius: 4px 0 0 4px;
+
+  background: #ffffff;
+
+  animation: indicatorIn 0.25s ease-out;
+}
+
+@keyframes indicatorIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+
+/* =========================================
+   ICON
+   ========================================= */
+
+.sidebar-icon {
+  width: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.sidebar-link:hover .sidebar-icon {
+  transform: scale(1.08);
+}
+
+.sidebar-link.active .sidebar-icon {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+.sidebar-link-text {
+  margin-left: 12px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   BOTTOM
+   ========================================= */
+
+.sidebar-bottom {
+  padding: 14px;
+
+  border-top: 1px solid var(--border-color);
+
+  flex-shrink: 0;
+}
+
+.sidebar-logout {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-logout:hover {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #f87171;
+
+  transform: translateX(3px);
+}
+
+.sidebar-logout:hover .sidebar-icon {
+  transform: translateX(2px);
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+
+  border-radius: 10px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
+
+
+/* =========================================
+   TABLET
+   1200px
+   ========================================= */
+
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .sidebar-logo {
+    padding: 0 18px;
+  }
+
+  .sidebar-nav {
+    padding: 20px 12px;
+  }
+}
+
+
+/* =========================================
+   SMALL TABLET
+   992px
+   ========================================= */
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 230px;
+  }
+
+  .sidebar-logo {
+    min-height: 72px;
+  }
+
+  .sidebar-logo-mark {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
+
+  .sidebar-logo-text h2 {
+    font-size: 16px;
+  }
+
+  .sidebar-link {
+    min-height: 42px;
+  }
+
+  .sidebar-link-text {
+    font-size: 13px;
+  }
+
+  .sidebar-icon {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   768px
+   ========================================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px;
+
+    transform: translateX(-100%);
+
+    box-shadow:
+      15px 0 40px var(--shadow-color);
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /*
+    MainLayout later can add:
+    .sidebar.mobile-open
+  */
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+
+    box-shadow:
+      15px 0 50px var(--shadow-color);
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   576px
+   ========================================= */
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .sidebar-logo {
+    min-height: 68px;
+
+    padding: 0 18px;
+  }
+
+  .sidebar-nav {
+    padding: 18px 12px;
+  }
+
+  .sidebar-bottom {
+    padding: 12px;
+  }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+   400px
+   ========================================= */
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 235px;
+  }
+
+  .sidebar-logo {
+    padding: 0 16px;
+  }
+
+  .sidebar-link {
+    min-height: 41px;
+  }
+
+  .sidebar-link-text {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .sidebar-link,
+  .sidebar-logo-mark,
+  .sidebar-logout {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* =========================================
+   SALES DROPDOWN
+   ========================================= */
+
+.sidebar-dropdown-button {
+  width: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.sidebar-dropdown-button.sales-parent-active {
+  color: var(--text-primary);
+}
+
+.sidebar-dropdown-arrow {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  color: var(--text-muted);
+
+  transition: transform 0.25s ease;
+}
+
+.sidebar-dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   SALES / INVENTORY SUBMENU
+   ========================================= */
+
+.sidebar-submenu {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-5px);
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-submenu-open {
+  max-height: 500px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  margin-bottom: 5px;
+}
+
+
+/* =========================================
+   SUBMENU LINK
+   ========================================= */
+
+.sidebar-submenu-link {
+  position: relative;
+
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 3px 0 3px 18px;
+  padding: 0 10px;
+
+  border-radius: 8px;
+
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-submenu-link:hover {
+  background: var(--card-bg-hover);
+
+  color: var(--text-primary);
+
+  transform: translateX(3px);
+}
+
+.sidebar-submenu-link.active {
+  background: var(--primary-light);
+
+  color: #60a5fa;
+}
+
+
+/* =========================================
+   SUBMENU ICON
+   ========================================= */
+
+.sidebar-submenu-icon {
+  width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   SUBMENU TEXT
+   ========================================= */
+
+.sidebar-submenu-text {
+  margin-left: 10px;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}

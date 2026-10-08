@@ -1,0 +1,934 @@
+/* =====================================================
+   STOCK PAGE
+===================================================== */
+
+.stock-page {
+    padding: 28px;
+    color: var(--text-primary);
+    min-height: 100%;
+    background: var(--bg-primary);
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.stock-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stock-title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stock-title-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.14);
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.stock-header h1 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.stock-header p {
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.stock-primary-btn,
+.stock-secondary-btn,
+.stock-danger-btn {
+    height: 42px;
+    padding: 0 18px;
+    border-radius: 9px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stock-primary-btn {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.stock-primary-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.stock-primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.stock-secondary-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.stock-secondary-btn:hover {
+    background: var(--card-bg-hover);
+    color: var(--text-primary);
+}
+
+.stock-danger-btn {
+    background: var(--danger);
+    color: #ffffff;
+}
+
+.stock-danger-btn:hover {
+    background: #b91c1c;
+}
+
+.stock-danger-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.stock-alert {
+    padding: 13px 16px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.stock-alert button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.stock-alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: var(--danger);
+}
+
+.stock-alert-success {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    color: var(--success);
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.stock-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.stock-summary-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 19px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.stock-summary-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.stock-summary-icon.blue {
+    background: rgba(37, 99, 235, 0.13);
+    color: var(--primary);
+}
+
+.stock-summary-icon.green {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--success);
+}
+
+.stock-summary-icon.orange {
+    background: rgba(249, 115, 22, 0.12);
+    color: #f97316;
+}
+
+.stock-summary-icon.red {
+    background: rgba(239, 68, 68, 0.12);
+    color: var(--danger);
+}
+
+.stock-summary-card span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.stock-summary-card strong {
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.stock-toolbar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.stock-search {
+    height: 42px;
+    min-width: 320px;
+    flex: 1;
+    max-width: 550px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    border-radius: 9px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-muted);
+}
+
+.stock-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.stock-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.stock-filter-group {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.stock-filter-group select {
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 9px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-secondary);
+    outline: none;
+}
+
+.stock-filter-group select:focus {
+    border-color: var(--primary);
+}
+
+.stock-filter-btn,
+.stock-refresh-btn {
+    height: 42px;
+    border-radius: 9px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 13px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stock-filter-btn:hover,
+.stock-refresh-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+.stock-filter-btn.active {
+    color: var(--warning);
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.stock-table-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.stock-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.stock-table {
+    width: 100%;
+    min-width: 1150px;
+    border-collapse: collapse;
+}
+
+.stock-table th {
+    background: var(--table-header);
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stock-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.stock-table tbody tr {
+    transition: 0.15s ease;
+}
+
+.stock-table tbody tr:hover {
+    background: var(--table-row-hover);
+}
+
+/* =====================================================
+   SKU COLUMN
+===================================================== */
+
+.stock-table th:nth-child(3),
+.stock-table td:nth-child(3) {
+    min-width: 135px;
+    width: 135px;
+}
+
+/* =====================================================
+   PRODUCT
+===================================================== */
+
+.stock-product-cell {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.stock-product-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+}
+
+.stock-product-cell strong,
+.stock-warehouse-cell strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.stock-product-cell small,
+.stock-warehouse-cell small {
+    display: block;
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+/* =====================================================
+   STOCK CODE / SKU
+===================================================== */
+
+.stock-code {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: var(--bg-primary);
+    color: #60a5fa;
+    font-size: 11px;
+    font-family: monospace;
+
+    /* Prevent SKU from breaking */
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+/* =====================================================
+   STOCK VALUES
+===================================================== */
+
+.stock-reserved {
+    color: var(--warning);
+}
+
+.stock-available-value {
+    color: var(--success);
+}
+
+.stock-low-value {
+    color: var(--danger);
+}
+
+.stock-level-cell small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.stock-level-badge {
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.stock-level-badge.low {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.stock-level-badge.normal {
+    color: var(--success);
+    background: rgba(34, 197, 94, 0.1);
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.stock-status {
+    display: inline-flex;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.stock-status.active {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.stock-status.inactive {
+    background: rgba(100, 116, 139, 0.12);
+    color: var(--text-secondary);
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.stock-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stock-action {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stock-action.view {
+    color: var(--primary);
+}
+
+.stock-action.edit {
+    color: var(--warning);
+}
+
+.stock-action.delete {
+    color: var(--danger);
+}
+
+.stock-action:hover {
+    transform: translateY(-1px);
+    border-color: currentColor;
+}
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.stock-empty {
+    height: 180px;
+    text-align: center !important;
+    color: var(--text-muted) !important;
+}
+
+.stock-empty svg {
+    display: block;
+    margin: 0 auto 9px;
+    font-size: 28px;
+}
+
+.stock-empty span {
+    display: block;
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.stock-pagination {
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.stock-pagination div {
+    display: flex;
+    gap: 7px;
+}
+
+.stock-pagination button {
+    height: 34px;
+    padding: 0 13px;
+    border-radius: 7px;
+    background: var(--bg-primary);
+    border: 1px solid var(--input-border);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stock-pagination button:hover:not(:disabled) {
+    border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+.stock-pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.stock-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 6, 23, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+.stock-modal {
+    width: min(900px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 25px 70px var(--shadow-color);
+}
+
+.stock-modal-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stock-modal-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 19px;
+}
+
+.stock-modal-header p {
+    margin: 5px 0 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.stock-modal-header > button {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.stock-modal-header > button:hover {
+    color: var(--text-primary);
+    border-color: var(--primary);
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.stock-form-grid {
+    padding: 22px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+}
+
+.stock-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.stock-form-group label {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stock-form-group input,
+.stock-form-group select {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.stock-form-group select {
+    cursor: pointer;
+}
+
+.stock-form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.stock-form-group input:focus,
+.stock-form-group select:focus {
+    border-color: rgba(37, 99, 235, 0.65);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.stock-form-group input:disabled,
+.stock-form-group select:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.stock-form-group select option {
+    background: var(--input-bg);
+    color: var(--text-primary);
+}
+
+.stock-help {
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.stock-checkbox {
+    margin: 0 22px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.stock-checkbox input {
+    accent-color: var(--primary);
+}
+
+.stock-modal-footer {
+    padding: 16px 22px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+/* =====================================================
+   VIEW
+===================================================== */
+
+.stock-detail-grid {
+    padding: 22px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.stock-detail-card {
+    padding: 15px;
+    border-radius: 10px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+.stock-detail-card span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.stock-detail-card strong {
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+.stock-delete-modal {
+    width: min(440px, 100%);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+}
+
+.stock-delete-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.stock-delete-modal h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 19px;
+}
+
+.stock-delete-modal p {
+    margin: 10px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.stock-delete-modal p strong {
+    color: var(--text-primary);
+}
+
+.stock-delete-warning {
+    padding: 11px;
+    margin: 15px 0;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.18);
+    color: var(--danger);
+    font-size: 11px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+    .stock-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stock-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stock-search {
+        max-width: none;
+        width: 100%;
+    }
+
+    .stock-filter-group {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 700px) {
+    .stock-page {
+        padding: 18px;
+    }
+
+    .stock-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stock-header .stock-primary-btn {
+        width: 100%;
+    }
+
+    .stock-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-filter-group {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .stock-filter-group select {
+        flex: 1;
+    }
+
+    .stock-form-grid,
+    .stock-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-modal-overlay {
+        padding: 12px;
+    }
+
+    .stock-modal {
+        max-height: 94vh;
+    }
+
+    .stock-modal-footer {
+        flex-wrap: wrap;
+    }
+}
+/* =====================================================
+   STOCK SUMMARY CARDS - LIGHT THEME
+===================================================== */
+
+html.light-theme .stock-summary-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+html.light-theme .stock-summary-card span {
+    color: #64748b;
+}
+
+html.light-theme .stock-summary-card strong {
+    color: #0f172a;
+}
+
+/* Blue - Stock Records */
+html.light-theme .stock-summary-icon.blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+/* Green - Available */
+html.light-theme .stock-summary-icon.green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+/* Orange - Reserved */
+html.light-theme .stock-summary-icon.orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+/* Red - Low Stock */
+html.light-theme .stock-summary-icon.red {
+    background: #fef2f2;
+    color: #dc2626;
+}
